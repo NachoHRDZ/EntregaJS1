@@ -5,7 +5,7 @@ function mostrarMenu() {
     const precios = {
         "chocolates": 2000,
         "galletas": 700,
-        "caramelos": 20,
+        "caramelos": 30,
     };
 
     let dineroUsuario = parseFloat(prompt("Por favor, introduce la cantidad de dinero que deseas gastar:"));

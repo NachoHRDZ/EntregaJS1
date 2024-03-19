@@ -1,6 +1,6 @@
 function mostrarMenu() {
     const nombre = prompt("¡Bienvenido a la Máquina Expendedora de Dulces! Por favor, introduce tu nombre:");
-    alert("Hola, " + nombre + ". ¡A continuación verás nuestro catalogo de dulces!");
+    alert("Hola, " + nombre + ". ¡A continuación verás nuestro catálogo de dulces!");
 
     const precios = {
         "chocolates": 2000,
@@ -14,9 +14,8 @@ function mostrarMenu() {
         return;
     }
 
-    let dulceElegido;
     do {
-        dulceElegido = prompt("Estos son nuestros dulces disponibles:\n\n" +
+        let dulceElegido = prompt("Estos son nuestros dulces disponibles:\n\n" +
             "1. Chocolates - $2000\n" +
             "2. Galletas - $700\n" +
             "3. Caramelos - $20\n\n" +
@@ -37,6 +36,7 @@ function mostrarMenu() {
                 return; 
             default:
                 alert("Por favor, selecciona una opción válida.");
+                continue; 
         }
 
         if (precios.hasOwnProperty(dulceElegido)) {
@@ -44,12 +44,14 @@ function mostrarMenu() {
             if (dineroUsuario >= precioDulce) {
                 const cambio = dineroUsuario - precioDulce;
                 alert("¡Disfruta tu " + dulceElegido + "! Tu cambio es de $" + cambio.toFixed(2) + ".");
-                return true;
+                dineroUsuario = cambio; // plata restante
             } else {
                 alert("Lo siento, no tienes suficiente dinero para comprar " + dulceElegido + ".");
+                continue; 
             }
         } else {
             alert("Lo siento, el dulce " + dulceElegido + " no está disponible en esta máquina.");
+            continue; 
         }
 
         let comprarMas = confirm("¿Quieres comprar algo más?");

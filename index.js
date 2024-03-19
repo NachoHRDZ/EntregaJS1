@@ -18,7 +18,7 @@ function mostrarMenu() {
         let dulceElegido = prompt("Estos son nuestros dulces disponibles:\n\n" +
             "1. Chocolates - $2000\n" +
             "2. Galletas - $700\n" +
-            "3. Caramelos - $20\n\n" +
+            "3. Caramelos - $30\n\n" +
             "Por favor, introduce el número del dulce que deseas (1-3), o escribe 'x' para salir:");
 
         switch (dulceElegido) {
@@ -44,7 +44,7 @@ function mostrarMenu() {
             if (dineroUsuario >= precioDulce) {
                 const cambio = dineroUsuario - precioDulce;
                 alert("¡Disfruta tu " + dulceElegido + "! Tu cambio es de $" + cambio.toFixed(2) + ".");
-                dineroUsuario = cambio; // plata restante
+                dineroUsuario = cambio;
             } else {
                 alert("Lo siento, no tienes suficiente dinero para comprar " + dulceElegido + ".");
                 continue; 
